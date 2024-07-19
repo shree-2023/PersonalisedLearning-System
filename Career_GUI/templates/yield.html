@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style2.css">
+    <title>Career Prediction System</title>
+</head>
+{% include 'nav.html' %}
+
+<body>
+
+
+    <div class="main">
+
+
+        <div class="container5 form-container">
+            <h2>Welcome, {{ session.uname }}</h2>
+            <form method="post" action="/predict">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="Logical_quotient_rating">Logical Quotient Rating(0-10)</label>
+                        <input type="number" id="Logical_quotient_rating" name="Logical_quotient_rating" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hackathons">Hackathons(0-10)</label>
+                        <input type="number" id="hackathons" name="hackathons" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="coding_skills_rating">Coding Skills Rating(0-10)</label>
+                        <input type="number" id="coding_skills_rating" name="coding_skills_rating" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="public_speaking_points">Public Speaking Points(0-10)</label>
+                        <input type="number" id="public_speaking_points" name="public_speaking_points" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="self_learning_capability">Self Learning Capability</label>
+                        <select id="self_learning_capability" name="self_learning_capability" required>
+                            <option value="" disabled selected>Select an option</option>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Extra_courses_did">Extra Courses Did</label>
+                        <select id="Extra_courses_did" name="Extra_courses_did" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="yes">yes</option>
+                            <option value="no">no</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="certifications">Certifications</label>
+                        <select id="certifications" name="certifications" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="distro making">distro making</option>
+                            <option value="r programming">r programming </option>
+                            <option value="information security">information security</option>
+                            <option value="shell programming">shell programming</option>
+                            <option value="machine learning">machine learning</option>
+                            <option value="full stack">full stack </option>
+                            <option value="hadoop">hadoop</option>
+                            <option value="python">python</option>
+                            <option value="app development">app development</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="workshops">Workshops</label>
+                        <select id="workshops" name="workshops" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="database security">database security</option>
+                            <option value="system designing">system designing</option>
+                            <option value="web technologies">web technologies</option>
+                            <option value="hacking">hacking</option>
+                            <option value="testing">testing</option>
+                            <option value="data science">data science</option>
+                            <option value="game development">game development</option>
+                            <option value="cloud computing">cloud computing</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="reading_and_writing_skills">Reading and Writing Skills</label>
+                        <select id="reading_and_writing_skills" name="reading_and_writing_skills" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="poor">poor</option>
+                            <option value="medium">medium</option>
+                            <option value="excellent">excellent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="memory_capability_score">Memory Capability Score</label>
+                        <select id="memory_capability_score" name="memory_capability_score" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="poor">poor</option>
+                            <option value="medium">medium</option>
+                            <option value="excellent">excellent</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="Interested_subjects">Interested Subjects</label>
+                        <select id="Interested_subjects" name="Interested_subjects" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Software Engineering">Software Engineering</option>
+                            <option value="IOT">IOT</option>
+                            <option value="cloud computing">cloud computing</option>
+                            <option value="programming">programming</option>
+                            <option value="networks">networks</option>
+                            <option value="Computer Architecture">Computer Architecture</option>
+                            <option value="data engineering">data engineering</option>
+                            <option value="hacking">hacking</option>
+                            <option value="Management">Management</option>
+                            <option value="parallel computing">parallel computing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="interested_career_area">Interested Career Area</label>
+                        <select id="interested_career_area" name="interested_career_area" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="system developer">system developer</option>
+                            <option value="security">security</option>
+                            <option value="Business process analyst">Business process analyst</option>
+                            <option value="developer">developer</option>
+                            <option value="testing">testing</option>
+                            <option value="cloud computing">cloud computing</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="Type_of_company_want_to_settle">Type of Company Want to Settle</label>
+                        <select id="Type_of_company_want_to_settle" name="Type_of_company_want_to_settle" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Service Based">Service Based </option>
+                            <option value="Web Services">Web Services</option>
+                            <option value="BPA">BPA</option>
+                            <option value="Testing and Maintainance Services">Testing and Maintainance Services</option>
+                            <option value="Product based">Product based</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Cloud Services">Cloud Services</option>
+                            <option value="product development">product development</option>
+                            <option value="Sales and Marketing">Sales and Marketing</option>
+                            <option value="SAaS services">SAaS services</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Taken_inputs_from_seniors_or_elders">Taken Inputs from Seniors or Elders</label>
+                        <select id="Taken_inputs_from_seniors_or_elders" name="Taken_inputs_from_seniors_or_elders" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="yes">yes</option>
+                            <option value="no">no</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="Management_or_Technical">Management or Technical</label>
+                        <select id="Management_or_Technical" name="Management_or_Technical" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Technical">Technical</option>
+                            <option value="Management">Management</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Interested_Type_of_Books">Interested Type of Books</label>
+                        <select id="Interested_Type_of_Books" name="Interested_Type_of_Books" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Guide">Guide</option>
+                            <option value="Health">Health</option>
+                            <option value="Self help">Self help</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Biographies">Biographies</option>
+                            <option value="Science fiction">Science fiction</option>
+                            <option value="Satire">Satire</option>
+                            <option value="Action and Adventure">Action and Adventure</option>
+                            <option value="Autobiographies">Autobiographies</option>
+                            <option value="Prayer books">Prayer books</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Science">Science</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Series">Series</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="hard_or_smart_worker">Hard or Smart Worker</label>
+                        <select id="hard_or_smart_worker" name="hard_or_smart_worker" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="hard worker">hard worker</option>
+                            <option value="smart worker">smart worker</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="worked_in_teams_ever">Worked in Teams Ever</label>
+                         <select id="worked_in_teams_ever" name="worked_in_teams_ever" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="yes">yes</option>
+                            <option value="no">no</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="Introvert">Introvert</label>
+                        <select id="Introvert" name="Introvert" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="yes">yes</option>
+                            <option value="no">no</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="center-button">
+                    <input type="submit" value="Predict">
+                </div>
+            </form>
+<!--            {% if predicted %}-->
+<!--                <h1 class="text-center text-danger">-->
+<!--                    Predicted Career: <br>-->
+<!--                    {{ predicted }}-->
+<!--                </h1>-->
+<!--            {% endif %}-->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/*.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #25D366;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+*/
+
+form h3 {
+    text-align: center;
+    color: #white;
+    font-size: 1.5rem; /* Increased font size */
+}
+form label {
+    margin-bottom: 10px; /* Increased margin for better spacing */
+    font-weight: bold;
+    font-size: 1.2rem; /* Increased font size */
+}
+
+
+form input[type="text"] {
+    width: 100%;
+    padding: 15px; /* Increased padding for larger input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+
+form .join,
+form .create-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .join input[type="text"] {
+    flex: 1;
+    margin-right: 15px; /* Increased margin for better spacing */
+}
+
+form button[type="submit"] {
+    padding: 15px 30px; /* Increased padding for larger buttons */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+form .error {
+    color: red;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem; /* Increased font size */
+}
+
+/*.join {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+*/
+
+.create-btn {
+  width: 100%;
+}
+
+
+.message-box {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: stretch;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.messages {
+    overflow-y: auto;
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.text {
+    margin-bottom: 10px;
+}
+
+.text strong {
+    color: #007bff;
+}
+
+.text .muted {
+    display: block;
+    text-align: right;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.inputs {
+    display: flex;
+    margin-top: 10px;
+}
+
+.inputs input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 1.2rem;
+}
+
+.inputs button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #28a745;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.inputs button:hover {
+    background-color: #218838;
+}
+
+
+/*.message-box {
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  align-items: stretch;
+}
+
+.messages {
+  overflow-y: scroll;
+  flex: 1;
+  width: 100%;
+}
+
+.inputs {
+  padding: 10px;
+  display: flex;
+}
+
+h2 {
+  text-align: center;
+}
+
+#message {
+  flex: 1;
+}
+
+.text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.muted {
+  font-size: 10px;
+  color: darkgray;
+}
+*/

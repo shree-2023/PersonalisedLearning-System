@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style2.css">
+    <title>Crop Recommendation System</title>
+</head>
+<body>
+    <nav>
+        <div class="brand">Crop Recommendation System</div>
+        <ul>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/yield">Yield</a></li>
+            <li><a href="/starter">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <div class="container5 form-container">
+            <form method="post">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="nitrogen">Nitrogen:</label>
+                        <input type="number" id="nitrogen" name="nitrogen" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="potassium">Potassium:</label>
+                        <input type="number" id="potassium" name="potassium" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phosphorus">Phosphorus:</label>
+                        <input type="number" id="phosphorus" name="phosphorus" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="temperature">Temperature(°C):</label>
+                        <input type="number" id="temperature" name="temperature" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="humidity">Humidity(%):</label>
+                        <input type="number" id="humidity" name="humidity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rainfall">Rainfall(m):</label>
+                        <input type="number" id="rainfall" name="rainfall" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="ph">pH:</label>
+                        <input type="number" id="ph" name="ph" required>
+                    </div>
+                </div>
+                <div class="row submit-row">
+                    <input type="submit" value="Submit" class="center-button">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

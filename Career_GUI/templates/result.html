@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Prediction Result</title>
+</head>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.container3 {
+    width: 80%;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the text */
+    border: 2px solid #007bff;
+}
+
+h1 {
+    color: #007bff;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+strong {
+    color: #28a745;
+}
+
+</style>
+<body>
+    <div class="container3">
+    <h1>Your Predicted Career: {{ career }}</h1>
+        <form action="{{ url_for('roadmap', career=career) }}">
+            <button type="submit">View Roadmap</button>
+        </form>
+    </div>
+</body>
+</html>

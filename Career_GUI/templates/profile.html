@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Account Details</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #00B5E2;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .brand {
+            color: white;
+            padding: 0 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            margin-left: 20px;
+        }
+
+        .nav-item, li a {
+            color: white;
+            text-align: center;
+            padding: 10px 16px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        li a:hover, .nav-item:hover {
+            background-color: #111;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00B5E2;
+            margin-bottom: 30px;
+        }
+
+        .user-details {
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .user-details h2 {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #555;
+            text-align: left;
+        }
+
+        .user-details h2 span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .rating {
+            text-align: left;
+            padding: 0 20px;
+            margin: 20px 0;
+        }
+
+        .rating label {
+            margin-right: 10px;
+        }
+
+        .rating input {
+            margin-right: 20px;
+        }
+
+        .review {
+            text-align: left;
+            padding: 0 20px;
+            margin-top: 20px;
+        }
+
+        .review textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .review button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #1ec31e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .review button:hover {
+            background-color: #0097c5;
+        }
+
+        .review-display {
+            text-align: left;
+            padding: 0 20px;
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .review-display h3 {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .review-display p {
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">Career Prediction System</div>
+        <ul>
+            <li><a href="/starter">Home</a></li>
+            <li><a href="/predict">Predict</a></li>
+            <li><a href="/profile">Account</a></li>
+            <li><a href="/chat">Chat</a> </li>
+            <li><a href="/logout">Logout</a></li>
+            {% if name %}
+                <li class="nav-item">Welcome, {{ name }}</li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="user-details">
+            <h1>Profile Information</h1>
+            <h2>Name: <span>{{ user_info[0] }}</span></h2>
+            <h2>Email: <span>{{ user_info[1] }}</span></h2>
+            <h2>Predicted Career: <span>{{ user_info[2] }}</span></h2>
+            <h2>Roadmap URL: <a href="{{ url_for('roadmap', career=user_info[2]) }}">Go to Roadmap</a></h2>
+        </div>
+
+        <form action="/submit_review" method="POST">
+            <div class="rating">
+                <label for="course_rating">Course Rating:</label>
+                <input type="number" id="course_rating" name="course_rating" min="1" max="5" required>
+            </div>
+
+            <div class="review">
+                <label for="course_review">Course Review:</label>
+                <textarea id="course_review" name="course_review" required></textarea>
+                <button type="submit">Submit Review</button>
+            </div>
+        </form>
+
+        {% if user_info[4] and user_info[3] %}
+        <div class="review-display">
+            <h3>Submitted Review:</h3>
+            <p><strong>Rating:</strong> {{ user_info[3] }}/5</p>
+            <p><strong>Review:</strong> {{ user_info[4] }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

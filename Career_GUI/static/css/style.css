@@ -1,0 +1,56 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+
+
+}
+
+
+.bg-nav{
+    background: #43C6AC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.mt-100{
+    margin-top:100px;
+}
+.container1 {
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+
+label {
+  margin-bottom: 5px; /* Optional: Adds some space between label and input */
+}
+
+input[type="number"],
+input[type="text"],
+input[type="submit"] {
+  width: 100%; /* Take up the full width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px; /* Optional: Adds space between input elements */
+}
+
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
